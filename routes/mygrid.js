@@ -7,8 +7,10 @@ module.exports = (app)=>{
     var mygrid = require('../models/mygrid')
 
     //abrir o formulario
-    app.get('/mygrid',(req,res)=>{
-        res.render('mygrid.ejs')
+    app.get('/mygrid',async(req,res)=>{
+        var resultado = await mygrid.find()
+        res.render('mygrid.ejs',{dados:resultado})
+        console.log(resultado)
     })
 
     //gravar as informações do formulario no banco de dados

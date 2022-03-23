@@ -7,6 +7,7 @@
     <title>MyGrid</title>
 </head>
 <body>
+    <a href="/admin">Voltar</a>
     <h1>My Grid - Gerenciamentoo de Conteúdo</h1>
     <h3>My Grid - Adicionar</h3>
     <form action="" method="post">
@@ -16,5 +17,20 @@
         <textarea name="texto" id="" cols="30" rows="10"></textarea><br>
         <input type="submit" value="Gravar">
     </form>
+    <h3>My Grid - Listar</h3>
+    <table>
+        <tr>
+            <th>Título</th>
+            <th>Texto</th>
+        </tr>
+        <!-- Inserir um loop para exibição da JSON mygrid-->
+        <% for (var n=0; n<dados.length; n++){%>
+        <tr>
+            <td><%=dados[n].titulo%></td>
+            <td><%=dados[n].texto%></td>
+        </tr>
+        <%}%>
+
+    </table>
 </body>
 </html>
