@@ -10,7 +10,7 @@ module.exports = (app)=>{
     app.get('/mygrid',async(req,res)=>{
         var resultado = await mygrid.find()
         res.render('mygrid.ejs',{dados:resultado})
-        console.log(resultado)
+        //console.log(resultado)
     })
 
     //gravar as informações do formulario no banco de dados

@@ -4,7 +4,7 @@ const conexao = async() => {
     //conexao local
     //var bdlocal = await mongoose.connect (1mongodb://localhost/AC1')
     //conexao atlas
-    var atlas = await mongoose.connect('mongodb+srv://useradmin:heloreal17@cluster0.1k2zm.mongodb.net/test')
+    var atlas = await mongoose.connect('mongodb+srv://useradmin:heloreal17@cluster0.1k2zm.mongodb.net/2miatri')
 }
 
 module.exports = conexao

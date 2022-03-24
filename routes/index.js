@@ -1,12 +1,19 @@
 module.exports = (app) => {
-    app.get('/', (req, res) => {
-        res.render('index.ejs')
+
+    var conexao = require('../config/database') 
+    
+    app.get('/', async(req, res) => {
+        conexao()
+        var mygrid = require('../models/mygrid')
+        var documentos = await mygrid.find().limit(3).sort
+        ({'_id':-1})
+
+            res.render('index.ejs',{dados:documentos})
     })
 
     app.post('/', (req, res) => {
-        var conexao = require('../config/database') 
+        
         conexao()
-
         var modelo = require('../models/mensagem')
 
         var documento = new modelo({
